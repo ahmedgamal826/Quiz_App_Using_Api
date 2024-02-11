@@ -13,6 +13,7 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen> {
+  bool isSelected = false;
   var currentquestionIndex = 0;
   late Future quiz;
   bool isloaded = false;
@@ -144,10 +145,14 @@ class _QuizScreenState extends State<QuizScreen> {
                               border:
                                   Border.all(color: Colors.white, width: 2)),
                           child: TextButton.icon(
-                              onPressed: () {},
-                              icon: const Icon(
+                              onPressed: () {
+                                setState(() {
+                                  isSelected = !isSelected;
+                                });
+                              },
+                              icon: Icon(
                                 CupertinoIcons.heart_fill,
-                                color: Colors.white,
+                                color: isSelected ? Colors.red : Colors.white,
                               ),
                               label: const Text(
                                 'Like',
