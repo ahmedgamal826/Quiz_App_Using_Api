@@ -123,17 +123,24 @@ class _QuizScreenState extends State<QuizScreen> {
                           ),
                         ),
                         Stack(alignment: Alignment.center, children: [
-                          Text(
-                            '$seconds',
-                            style: const TextStyle(
-                                color: Colors.white, fontSize: 25),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 45),
+                            child: Text(
+                              '$seconds',
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 25),
+                            ),
                           ),
                           SizedBox(
-                            width: 60,
+                            width: 110,
                             height: 60,
-                            child: CircularProgressIndicator(
-                              value: seconds / 60,
-                              valueColor: AlwaysStoppedAnimation(Colors.white),
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 45),
+                              child: CircularProgressIndicator(
+                                value: seconds / 60,
+                                valueColor:
+                                    AlwaysStoppedAnimation(Colors.white),
+                              ),
                             ),
                           ),
                         ]),
@@ -163,8 +170,8 @@ class _QuizScreenState extends State<QuizScreen> {
                     ),
                   ),
                   const SizedBox(height: 40),
-                  Image.asset('assets/ideas.png', width: 200),
-                  const SizedBox(height: 20),
+                  Image.asset('assets/ideas.png', width: 170),
+                  const SizedBox(height: 10),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
@@ -223,6 +230,7 @@ class _QuizScreenState extends State<QuizScreen> {
                           child: Container(
                             alignment: Alignment.center,
                             width: 150,
+                            height: 60,
                             padding: const EdgeInsets.all(16),
                             decoration: BoxDecoration(
                               color: OptionsColors[index],
@@ -231,8 +239,7 @@ class _QuizScreenState extends State<QuizScreen> {
                             child: Text(
                               optionList[index].toString(),
                               style: const TextStyle(
-                                color: Colors.black,
-                              ),
+                                  color: Colors.black, fontSize: 22),
                             ),
                           ),
                         ),
